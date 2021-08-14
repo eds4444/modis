@@ -143,7 +143,35 @@ function modis_scripts() {
 	wp_enqueue_style( 'modis-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'modis-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'modis-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_style( 'modis-open-iconic-bootstrap', get_template_directory_uri()."/assets/css/open-iconic-bootstrap.min.css", array(), _S_VERSION );
+	wp_enqueue_style( 'modis-animate', get_template_directory_uri()."/assets/css/animate.css", array(), _S_VERSION );
+	wp_enqueue_style( 'modis-owl.carousel', get_template_directory_uri()."/assets/css/owl.carousel.min.css", array(), _S_VERSION );
+	wp_enqueue_style( 'modis-owl.theme.default', get_template_directory_uri()."/assets/css/owl.theme.default.min.css", array(), _S_VERSION );
+	wp_enqueue_style( 'modis-magnific-popup', get_template_directory_uri()."/assets/css/magnific-popup.css", array(), _S_VERSION );
+	wp_enqueue_style( 'modis-aos', get_template_directory_uri()."/assets/css/aos.css", array(), _S_VERSION );
+	wp_enqueue_style( 'ionicons', get_template_directory_uri()."/assets/css/ionicons.min.css", array(), _S_VERSION );
+	wp_enqueue_style( 'bootstrap-datepicker', get_template_directory_uri()."/assets/css/bootstrap-datepicker.css", array(), _S_VERSION );
+	wp_enqueue_style( 'jquery.timepicker.css', get_template_directory_uri()."/assets/css/jquery.timepicker.css", array(), _S_VERSION );
+	wp_enqueue_style( 'flaticon.css', get_template_directory_uri()."/assets/css/flaticon.css", array(), _S_VERSION );
+	wp_enqueue_style( 'icomoon.css', get_template_directory_uri()."/assets/css/icomoon.css", array(), _S_VERSION );
+	wp_enqueue_style( 'modis-general.css', get_template_directory_uri()."/assets/css/general.css", array(), _S_VERSION );
+
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery-migrate-3.0.1.min', get_template_directory_uri()."/assets/js/jquery-migrate-3.0.1.min.js", array(), _S_VERSION, true);
+	wp_enqueue_script('popper', get_template_directory_uri()."/assets/js/popper.min.js", array(), _S_VERSION, true);
+	wp_enqueue_script('bootstrap', get_template_directory_uri()."/assets/js/bootstrap.min.js", array(), _S_VERSION, true);
+	wp_enqueue_script('easing', get_template_directory_uri()."/assets/js/jquery.easing.1.3.js", array(), _S_VERSION, true);
+	wp_enqueue_script('waypoints', get_template_directory_uri()."/assets/js/jquery.waypoints.min.js", array(), _S_VERSION, true);
+	wp_enqueue_script('stellar', get_template_directory_uri()."/assets/js/jquery.stellar.min.js", array(), _S_VERSION, true);
+	wp_enqueue_script('owl.carousel', get_template_directory_uri()."/assets/js/owl.carousel.min.js", array(), _S_VERSION, true);
+	wp_enqueue_script('jquery.magnific-popup', get_template_directory_uri()."/assets/js/jquery.magnific-popup.min.js", array(), _S_VERSION, true);
+	wp_enqueue_script('aos', get_template_directory_uri()."/assets/js/aos.js", array(), _S_VERSION, true);
+	wp_enqueue_script('animateNumber', get_template_directory_uri()."/assets/js/jquery.animateNumber.min.js", array(), _S_VERSION, true);
+	wp_enqueue_script('bootstrap-datepicker', get_template_directory_uri()."/assets/js/bootstrap-datepicker.js", array(), _S_VERSION, true);
+	wp_enqueue_script('scrollax', get_template_directory_uri()."/assets/js/scrollax.min.js", array(), _S_VERSION, true);
+	wp_enqueue_script('google-map', get_template_directory_uri()."/assets/js/google-map.js", array(), _S_VERSION, true);
+	wp_enqueue_script('main.js', get_template_directory_uri()."/assets/js/main.js", array(), _S_VERSION, true);
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

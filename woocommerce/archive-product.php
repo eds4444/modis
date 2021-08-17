@@ -29,7 +29,7 @@ get_header( 'shop' );
 		  <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
              <h1 class="mb-0 bread"><?php woocommerce_page_title(); ?></h1>
 		  <?php endif; ?>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Product</span></p>
+			<?php woocommerce_breadcrumb();  ?>
           </div>
         </div>
       </div>

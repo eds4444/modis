@@ -22,9 +22,8 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters('active_plugins', ge
         $defaults['delimiter'] = ' &nbsp; ';
         $defaults['wrap_before'] = '<p class="breadcrumbs"><span>';
         $defaults['wrap_after']  = '</span></p>';
-
         return $defaults;
-    }
+        }
 
     //отключаем хуки, вверхнюю сортировку товара
     //remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);

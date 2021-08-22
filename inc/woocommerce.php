@@ -100,7 +100,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters('active_plugins', ge
     remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
 
     function my_custome_title(){
-        echo '<h3><a href="'. get_the_permalink() . '">'. get_the_title() .'</a></h3>';
+        echo '<h3><a href="'.get_the_permalink(). '">'.get_the_title().'</a></h3>';
     }
     add_action( 'woocommerce_shop_loop_item_title', 'my_custome_title', 15);
 

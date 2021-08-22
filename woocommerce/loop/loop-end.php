@@ -19,4 +19,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-</ul></div></section>
+</ul>
+
+<?php
+	/**
+	 * Hook: woocommerce_after_shop_loop.
+	 *
+	 * @hooked woocommerce_pagination - 10
+	 */
+	do_action( 'woocommerce_after_shop_loop' );
+?>
+
+</div></section>

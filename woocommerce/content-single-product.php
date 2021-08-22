@@ -33,6 +33,8 @@ if ( post_password_required() ) {
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
+<div class="left_image_box ftco-animate fadeInUp">
+
 	<?php
 	/**
 	 * Hook: woocommerce_before_single_product_summary.
@@ -42,8 +44,9 @@ if ( post_password_required() ) {
 	 */
 	do_action( 'woocommerce_before_single_product_summary' );
 	?>
+</div>	
 
-	<div class="summary entry-summary">
+	<div class="summary entry-summary productcustom-details pl-md-5 ftco-animate fadeInUp">
 		<?php
 		/**
 		 * Hook: woocommerce_single_product_summary.

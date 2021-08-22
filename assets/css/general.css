@@ -7819,7 +7819,7 @@ h1, h2, h3, h4, h5,
     .productcustom .woocommerce-LoopProduct-link span.status {
       position: absolute;
       top: 10px;
-      left: -1px;
+      left: 0px;
       padding: 2px 15px;
       color: #000000;
       font-weight: 300;
@@ -7930,7 +7930,7 @@ h1, h2, h3, h4, h5,
   font-size: 14px; }
 
 .productcustom-details .form-group {
-  position: relative; }
+  position: relative; align-items: center; }
   .productcustom-details .form-group .form-control {
     padding-right: 40px;
     color: #000000;
@@ -7962,7 +7962,9 @@ h1, h2, h3, h4, h5,
       .productcustom-details .form-group .icon {
         right: 10px; } }
   .productcustom-details .form-group .select-wrap {
-    position: relative; }
+    position: relative;
+    margin-right: 10px;
+   }
     .productcustom-details .form-group .select-wrap select {
       font-size: 13px;
       -webkit-appearance: none;
@@ -9143,3 +9145,16 @@ textarea.form-control {
     .woocommerce ul.products li.product .star-rating{
       font-size: 13px!important;
     }
+  .left_image_box{
+    position: relative;
+  }
+  .left_image_box .status{
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    padding: 2px 15px;
+    color: #000000;
+    font-weight: 300;
+    background: #f1b8c4;
+    z-index: 99; 
+  }

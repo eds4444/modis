@@ -59,6 +59,40 @@
 	};
 	loader();
 
+   if($('.quantity').length){
+		var quantitiy=0;
+		$('.quantity-right-plus').on('click',function(e){
+			
+			// Stop acting like a button
+			e.preventDefault();
+			// Get the field name
+			var quantity = $('.qty').val();
+			
+			// If is not undefined
+				
+				$('.qty').val(quantity + 1);
+
+			
+				// Increment
+			
+		});
+
+		$('.quantity-left-minus').on('click',function(e){
+			// Stop acting like a button
+			e.preventDefault();
+			// Get the field name
+			var quantity = $('.qty').val();
+			
+			// If is not undefined
+		
+				// Increment
+				if(quantity>0){
+				$('.qty').val(quantity - 1);
+				}
+		});
+   }
+	 
+
 	// Scrollax
    $.Scrollax();
 

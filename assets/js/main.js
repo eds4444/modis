@@ -66,7 +66,7 @@
 			// Stop acting like a button
 			e.preventDefault();
 			// Get the field name
-			var quantity = $('.qty').val();
+			var quantity = parseInt($('.qty').val());
 			
 			// If is not undefined
 				
@@ -81,7 +81,7 @@
 			// Stop acting like a button
 			e.preventDefault();
 			// Get the field name
-			var quantity = $('.qty').val();
+			var quantity = parseInt($('.qty').val());
 			
 			// If is not undefined
 		

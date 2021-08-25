@@ -122,5 +122,8 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters('active_plugins', ge
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
 
     add_action( 'woocommerce_single_product_summary', 'modis_single_title', 5);
+
+    remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10);
+    add_action( 'woocommerce_before_variations_form', 'woocommerce_single_variation', 11);
     
 }    

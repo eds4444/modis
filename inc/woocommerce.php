@@ -125,5 +125,12 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters('active_plugins', ge
 
     remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10);
     add_action( 'woocommerce_before_variations_form', 'woocommerce_single_variation', 11);
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+
     
 }    

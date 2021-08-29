@@ -131,6 +131,12 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters('active_plugins', ge
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
+    //cart
+    remove_action( 'woocommerce_cart_collaterals','woocommerce_cross_sell_display' );
+    add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
 
-    
+    add_filter( 'woocommerce_cross_sells_columns', 'modis_change_cross_sells_columns' ); 
+        function modis_change_cross_sells_columns( $columns ) {
+        return 4;
+        }
 }    

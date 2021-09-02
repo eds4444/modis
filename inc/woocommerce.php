@@ -139,4 +139,20 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters('active_plugins', ge
         function modis_change_cross_sells_columns( $columns ) {
         return 4;
         }
+
+    //Disable select2
+    function woo_dequeue_select2() {
+        if ( class_exists( 'woocommerce' ) ) {
+            wp_dequeue_style( 'select2' );
+            wp_deregister_style( 'select2' );
+    
+            wp_dequeue_script( 'selectWoo');
+            wp_deregister_script('selectWoo');
+        } 
+    }
+    add_action( 'wp_enqueue_scripts', 'woo_dequeue_select2', 100 );
+
+    // отключение купона
+    remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+      
 }    

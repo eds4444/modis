@@ -157,7 +157,7 @@ function modis_scripts() {
 	wp_enqueue_style( 'modis-general.css', get_template_directory_uri()."/assets/css/general.css", array(), _S_VERSION );
 
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('jquery-migrate-3.0.1.min', get_template_directory_uri()."/assets/js/jquery-migrate-3.0.1.min.js", array(), _S_VERSION, true);
+	//wp_enqueue_script('jquery-migrate-3.0.1.min', get_template_directory_uri()."/assets/js/jquery-migrate-3.0.1.min.js", array(), _S_VERSION, true);
 	wp_enqueue_script('popper', get_template_directory_uri()."/assets/js/popper.min.js", array(), _S_VERSION, true);
 	wp_enqueue_script('bootstrap', get_template_directory_uri()."/assets/js/bootstrap.min.js", array(), _S_VERSION, true);
 	wp_enqueue_script('easing', get_template_directory_uri()."/assets/js/jquery.easing.1.3.js", array(), _S_VERSION, true);

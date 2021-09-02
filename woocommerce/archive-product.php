@@ -25,15 +25,16 @@ get_header( 'shop' );
 <div class="hero-wrap hero-bread" style="background-image: url('<?php echo get_template_directory_uri(). '/assets/images/bg_6.jpg';?>');">
     <div class="container">
        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-		  <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-             <h1 class="mb-0 bread"><?php woocommerce_page_title(); ?></h1>
-		  <?php endif; ?>
-			<?php woocommerce_breadcrumb();  ?>
-          </div>
+            <div class="col-md-9 ftco-animate text-center">
+				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+					<h1 class="mb-0 bread"><?php woocommerce_page_title(); ?></h1>
+				<?php endif; ?>
+			    <?php woocommerce_breadcrumb();  ?>
+            </div>
         </div>
-      </div>
     </div>
+</div>
+<div style="display:flex;">
 
 <?php
 
@@ -99,6 +100,9 @@ do_action( 'woocommerce_after_main_content' );
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action( 'woocommerce_sidebar' );
+do_action( 'woocommerce_sidebar' ); ?>
 
+</div>
+
+<?php
 get_footer( 'shop' );

@@ -86,7 +86,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters('active_plugins', ge
     //remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 
     //отключаем сайдбар
-    remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+    //remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 
     //product content отключаем ссылки на картинках
     remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);

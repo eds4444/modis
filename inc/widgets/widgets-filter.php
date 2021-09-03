@@ -87,23 +87,25 @@ class Modis_Filter_Widget extends WP_Widget
 
                             $class='';
                             if($temp_cat){$class='has_child';} else {$class='no_child';} ?>
-
+                            <input id="term_<?php echo $temp_cat->term_id; ?>" type="checkbox" name="category" value="<?php echo $temp_cat->term_id; ?>">
                             <a href="#" class="<?php echo $class;?>"><?php echo $cat->name; ?></a>
 
                             <?php 
 
                             if ($temp_cat) {
-                                echo '<div class="st-content cat-list">';
-
+                                echo '<div class="st-content cat-list">'; 
+                        
                                 foreach ($temp_cat as $temp) { ?>
                                    <div class="log__group chek">
-                                       <input id="term_<?php echo $temp->term_id; ?>" type="checkbox" name="category" value="<?php echo $temp->term_name; ?>">
+                                       <input id="term_<?php echo $temp->term_id; ?>" type="checkbox" name="category" value="<?php echo $temp->term_id; ?>">
                                        <label for="term_<?php echo $temp->term_id; ?>"><?php echo $temp->term_name; ?></label>
                                    </div>
-                          <?php }
+                            <?php }
                                    echo '</div>';                                    
-                             ?>
+                             
                             }
+
+                            ?>
 
                         </li>
                      <?php }
@@ -115,7 +117,33 @@ class Modis_Filter_Widget extends WP_Widget
     }    
 
     protected function get_filtered_price() {
-        global $wpdp;
+        global $wpdb;
+
+        $args       = wc()->query->get_main_query()->query_vars;
+        $tax_query  = isset($args['tax_query']) ? $args['tax_query'] : array();
+        $meta_query = isset($args['meta_query']) ? $args['meta_query'] : array();
+
+        if ( ! is_post_type_archive( 'product' ) && ! empty( $args['taxonomy']) && ! empty( $args['term'])){
+            $tax_query[] = array(
+                'taxonomy' => $args['taxonomy'],
+                'terms'    => array( $args['term']),
+                'field'    => 'slug',
+            );
+        }
+
+        foreach ($meta_query + $tax_query as $key => $query) {
+            if ( ! empty( $query['price_filter'] ) || ! empty( $query['rating_filter'] ) ) {
+                unset( $meta_query[ $key ] );
+            }
+        }
+
+        $meta_query = new WP_Meta_Query( $meta_query );
+        $tax_query  = new WP_Tax_Query( $tax_query );
+
+        $meta_query_sql = $meta_query->get_sql( 'post', $wpdb->posts, 'ID' );
+        $tax_query_sql  = $tax_query->get_sql( $wpdb->posts, 'ID' );
+
+    
     }   
 
 }
